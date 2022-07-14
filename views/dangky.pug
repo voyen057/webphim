@@ -1,0 +1,19 @@
+link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet')
+link(rel="stylesheet", href="/stylesheet/style.css")
+.container.py-5
+  form.col-6.border.border-dark.rounded.p-3.m-auto(action='/luu', method='POST')
+    .form-group.mb-3
+      label(for='un') Username
+      input#un.form-control.bg-white(type='text', name='username')
+    .form-group.mb-3
+      label(for='pass') M&#x1EAD;t kh&#x1EA9;u
+      input#pass.form-control.bg-white(type='password', name='password')
+    .form-group.mb-3
+      label(for='email') Email
+      input#email.form-control.bg-white(type='email', name='email')
+    .form-group.mt-3.text-center
+      button.btn.btn-danger.px-4.py-2.text-white(type='submit')  &Dstrok;&Abreve;NG K&Yacute;
+    .btn-dangky
+        a(href='/login')
+            | Đăng nhập
+include components/footer.pug

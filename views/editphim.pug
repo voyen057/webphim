@@ -1,0 +1,74 @@
+include components/head.admin.pug
+// Content Wrapper. Contains page content
+.content-wrapper
+  // Content Header (Page header)
+  section.content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          h1 Products Edit
+        .col-sm-6
+          ol.breadcrumb.float-sm-right
+            li.breadcrumb-item
+              a(href='#') Home
+            li.breadcrumb-item.active Products Edit
+    // /.container-fluid
+  // Main content
+  | getProductById($id);
+  | foreach ($getProductById as $values) : ?&gt;
+  section.content
+    form(action="update.php?id=<?php echo $values['id'] ?>" method='post' enctype='multipart/form-data')
+      .row
+        .col-md-12
+          .card.card-primary
+            .card-header
+              h3.card-title General
+              .card-tools
+                button.btn.btn-tool(type='button' data-card-widget='collapse' title='Collapse')
+                  i.fas.fa-minus
+            .card-body
+              .form-group
+                label(for='inputName') Name
+                input#inputName.form-control(type='text' value="<?php echo $values['name'] ?>" name='name')
+              .form-group
+                label(for='inputStatus') Manufacture
+                select#inputStatus.form-control.custom-select(name='manu')
+                  option(selected='' disabled='') Select one
+                  | getAllManu();
+                  | foreach ($getAllManu as $values1) :
+                  | ?&gt;
+                  option(value='<?php' echo='' ?='')
+                    | &gt;
+              .form-group
+                label(for='inputStatus') Protype
+                select#inputStatus.form-control.custom-select(name='type')
+                  option(selected='' disabled='') Select one
+                  | getAllType();
+                  | foreach ($getAllType as $values1) :
+                  | ?&gt;
+                  option(value='<?php' echo='' ?='')
+                    | &gt;
+              .form-group
+                label(for='inputDescription') Description
+                textarea#summernote.form-control(rows='6' name='desc')
+              .form-group
+                label(for='inputProjectLeader') Price
+                input#inputProjectLeader.form-control(type='text' value=" <?php echo $values['price'] ?>" name=' price')
+              .form-group
+                label(for='inputStatus') Feature
+                select#inputStatus.form-control.custom-select(name='feature')
+                  option(selected='' disabled='') Select one
+                  option(value='1' <?php='' if='' 1)='' {='' echo='' }='' ?='') &gt; N&#x1ED5;i b&#x1EAD;t 
+                  option(value='0' <?php='' if='' 0)='' {='' echo='' }='' ?='') &gt; Kh&ocirc;ng n&#x1ED5;i b&#x1EAD;t 
+              .form-group
+                label(for='inputProjectLeader') Image
+                img(name='image' style='width: 50px;height:50px' src="../img/<?php echo $values['image'] ?>")
+                input#inputProjectLeader.form-control(type='file' name='image')
+            // /.card-body
+          // /.card
+      .row
+        .col-12
+          input.btn.btn-success.float-right(name='submit' type='submit' value='Update product')
+  // /.content
+// /.content-wrapper
+include components/footer.admin.pug

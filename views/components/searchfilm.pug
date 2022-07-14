@@ -1,0 +1,25 @@
+section#content-table
+  .row
+    each data in lists
+      .rooms-column.col-lg-4.col-md-6.py-3#list
+        .card
+          .card-header
+            img.rooms-image(src='/img/' +data.anhminhhoa, height='200px', width='350px')           
+          .card-body
+            a(href="/chitietphim/"+data.id) 
+              h2= data.tenphim
+            p= data.dienvien
+#exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+  .modal-dialog.modal-lg
+    .modal-content
+//- .btn-box
+//-   a(href='')
+//-     | See More
+//- section.international-trailer.margin
+//-   .trailer-title
+//-     h3 official trailer
+//-   iframe(width='100%' height='500' src='https://www.youtube-nocookie.com/embed/1VIZ89FEjYI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+//- section.international-trailer.margin
+//-   .trailer-title
+//-     h3 official trailer
+//-   iframe(width='100%' height='500' src='https://www.youtube-nocookie.com/embed/1VIZ89FEjYI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')

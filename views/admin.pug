@@ -1,0 +1,35 @@
+include components/head.admin.pug
+.content-wrapper
+  // Content Header (Page header)
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          h1.m-0 Dashboard
+        // /.col
+        .col-sm-6
+          ol.breadcrumb.float-sm-right
+            li.breadcrumb-item
+              a(href='#') Home
+            li.breadcrumb-item.active Dashboard v1
+        // /.col
+      // /.row
+    // /.container-fluid
+  // /.content-header
+  // Main content
+  section.content
+    .container-fluid
+      // Small boxes (Stat box)
+      .row
+        .col-lg-3.col-6
+          // small box
+          .small-box.bg-info
+            .inner            
+              h3
+              p Phim
+            .icon
+              i.ion.ion-bag
+            a.small-box-footer(href='')
+              | More info 
+              i.fas.fa-arrow-circle-right
+include components/footer.admin.pug

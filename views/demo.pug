@@ -1,0 +1,62 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='csrf-token', content='content')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(name='csrf-token', content='{{ csrf_token() }}')
+  title how to get data from ajax request in node js - Tutsmake.COM
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+.container.mt-5
+  .row.justify-content-center
+    .col-md-10
+      .card
+        .card-header
+          h2.text-info how to get data from ajax request in node js - Tutsmake.COM
+        .card-body
+          .form-group
+            label(for='country') Country
+            select#country-dropdown.form-control
+          .form-group
+            label(for='state') State
+            select#state-dropdown.form-control
+script.
+  $(document).ready(function() {
+  function getCountryList(p1, p2) {
+  var country_id = this.value;
+  $("#country-dropdown").html('');
+  $.ajax({
+  url: "http://localhost:3000/countries-list",
+  type: "GET",
+  dataType: 'json',
+  success: function(result) {
+  $('#country-dropdown').html('<option value="">Select Country</option>');
+  $.each(result.countries, function(key, value) {
+  $("#country-dropdown").append('<option value="' + value.id + '">' + value.tenphim + '</option>');
+  });
+  $('#city-dropdown').html('<option value="">Select Country First</option>');
+  }
+  });
+  }
+  $('#country-dropdown').on('change', function() {
+  var country_id = this.value;
+  $("#state-dropdown").html('');
+  $.ajax({
+  url: "http://localhost:3000/get-states-by-country",
+  type: "POST",
+  data: {
+  name: 'country',
+  country_id: country_id,
+  },
+  dataType: 'json',
+  success: function(result) {
+  $('#state-dropdown').html('<option value="">Select State</option>');
+  $.each(result.states, function(key, value) {
+  $("#state-dropdown").append('<option value="' + value.id + '">' + value.theloai + '</option>');
+  });
+  $('#city-dropdown').html('<option value="">Select State First</option>');
+  }
+  });
+  });
+  getCountryList();
+  });

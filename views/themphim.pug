@@ -1,0 +1,56 @@
+include components/head.admin.pug
+// Content Wrapper. Contains page content
+.content-wrapper
+  // Content Header (Page header)
+  section.content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          h1 Thêm phim
+        .col-sm-6
+          ol.breadcrumb.float-sm-right
+            li.breadcrumb-item
+              a(href='#') Home
+            li.breadcrumb-item.active Thêm phim
+    // /.container-fluid
+  // Main content
+  section.content
+    form(action='/listphim/them' method='post' enctype='multipart/form-data')
+      .row
+        .col-md-12
+          .card.card-primary
+            .card-header
+              h3.card-title General
+              .card-tools
+                button.btn.btn-tool(type='button' data-card-widget='collapse' title='Collapse')
+                  i.fas.fa-minus
+            .card-body
+              .form-group
+                label(for='inputName') Tên phim
+                input#inputName.form-control(type='text' name='tenphim')
+              .form-group
+                label(for='inputStatus') Diễn viên
+                input#inputName.form-control(type='text' name='dienvien')
+              .form-group
+                label(for='inputStatus') Thể loai
+                select#inputStatus.form-control.custom-select(name='theloai')
+                  option(selected='' disabled='') Select one
+                    each data in listtheloai
+                        option(value= data.id)= data.theloai
+              .form-group
+                label(for='inputDescription') Mô tả
+                textarea#summernote.form-control(rows='4' name='desc')
+              .form-group
+                label(for='inputProjectLeader') Video
+                input#inputProjectLeader.form-control(type='text' name='price')
+              .form-group
+                label(for='inputProjectLeader') Ảnh
+                input#inputProjectLeader.form-control(type='file' name='image' accept="image")
+            // /.card-body
+          // /.card
+      .row
+        .col-12
+          input.btn.btn-success.float-right(name='submit' type='submit' value='Thêm phim')
+  // /.content
+// /.content-wrapper
+include components/footer.admin.pug

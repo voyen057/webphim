@@ -1,0 +1,52 @@
+include components/head.admin.pug
+.content-wrapper
+  // Content Header (Page header)
+  section.content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          h1 Protypes
+        .col-sm-6
+          ol.breadcrumb.float-sm-right
+            li.breadcrumb-item
+              a(href='#') Home
+            li.breadcrumb-item.active Protypes
+    // /.container-fluid
+  // Main content
+  section.content(style='padding-right: 650px;')
+    // Default box
+    .card
+      .card-header
+        h3.card-title Protypes
+        .card-tools
+          button.btn.btn-tool(type='button' data-card-widget='collapse' title='Collapse')
+            i.fas.fa-minus
+          button.btn.btn-tool(type='button' data-card-widget='remove' title='Remove')
+            i.fas.fa-times
+      .card-body
+        table.table.table-striped.projects
+          thead
+            tr
+              th(style='width: 10% text-center')
+                | ID
+              th(style='width: 10% text-center')
+                | Name
+              th(style='width: 5%  ')
+                | Action
+          tbody
+            each data in listtheloai
+              tr
+                td= data.id
+                td= data.theloai
+                td.project-actions.text-left
+                  a.btn.btn-info.btn-sm(href=`/theloai/edit/`+data.id)
+                    i.fas.fa-pencil-alt  
+                    |                                     Edit
+                  a.btn.btn-danger.btn-sm(href=`/theloai/delete?id= ${data.id}`)
+                    i.fas.fa-trash  
+                    |                                     Delete
+      // /.card-body
+    // /.card
+  // /.content
+// /.content-wrapper
+include components/footer.admin.pug

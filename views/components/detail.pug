@@ -1,0 +1,42 @@
+link(type='text/css' rel='stylesheet' href='/stylesheet//bootstrap.min.css')
+.section.pt-5
+  .container
+    each data in lists
+      .row
+        .col-md-7
+          #product-main-img
+            .product-preview
+              img(src='/img/'+data.anhminhhoa, alt='' height="400px" width="600px")
+        .col-md-5
+          form(action="" method='post')
+            .product-details
+              h2.product-name= data.tenphim
+              div
+                h3.product-price Diễn viên: #{data.dienvien} 
+                span.product-available Thời lượng phim: #{data.thoiluongphim}
+                h5 Đạo diễn: #{data.daodien} 
+                h5= data.noisanxuat
+        .col-md-12
+          #product-tab
+            ul.tab-nav
+              li.active
+                a(data-toggle='tab' href='#tab1') Thông tin phim
+              li
+                a(data-toggle='tab' href='#tab2') Video phim
+              li
+                a(data-toggle='tab' href='#tab3') Comment
+            .tab-content
+              #tab1.tab-pane.fade.in.active
+                .row
+                  .col-md-12
+                    p= data.thongtinphim
+              #tab2.tab-pane.fade.in
+                .row.pb-5
+                  .col-md-12
+                    section.international-trailer.margin
+                      .trailer-title
+                        h3 official trailer
+                      iframe(width='100%' height='500' src= data.video title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+              #tab3.tab-pane.fade.in
+                .row
+script(src='/js/bootstrap.min.js')

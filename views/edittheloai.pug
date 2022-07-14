@@ -1,0 +1,37 @@
+include components/head.admin.pug
+// Content Wrapper. Contains page content
+.content-wrapper
+  // Content Header (Page header)
+  section.content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          h1 Thể loại
+        .col-sm-6
+          ol.breadcrumb.float-sm-right
+            li.breadcrumb-item
+              a(href='#') Home
+            li.breadcrumb-item.active Thể loại
+  section.content.pe-5
+    each data in lists
+        form(action="/theloai/edit/"+data.id method='post')
+            .row
+                .col-md-12
+                    .card.card-primary
+                        .card-header
+                            h3.card-title General
+                        .card-tools
+                            button.btn.btn-tool(type='button' data-card-widget='collapse' title='Collapse')
+                            i.fas.fa-minus
+                        .card-body
+                    .form-group
+                            label(for="tl") Thể loại
+                            input#inputName.form-control(type='text' name='theloai' value= `${data.theloai}`)
+                    // /.card-body
+                // /.card
+            .row
+                .col-12
+                    input.btn.btn-success.float-right(name='submit' type='submit' value='Sửa thể loại')
+  // /.content
+// /.content-wrapper
+include components/footer.admin.pug

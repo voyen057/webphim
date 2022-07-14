@@ -1,0 +1,367 @@
+body {
+    background: cornflowerblue;
+    color: plum;
+}
+
+P {
+    color: black;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.resultSearch #listsearch {
+    /* background: white;
+    position: absolute; */
+    z-index: 1;
+    top: 20;
+    /* color: black !important; */
+    left: 0;
+    right: 5px;
+    border-radius: 10px;
+
+}
+
+.resultSearch #listsearch a {
+
+    color: black !important;
+    text-decoration: none;
+
+}
+
+#footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 3rem 5rem;
+}
+
+.btn-dangky {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: center;
+}
+
+.btn-dangky a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #eb19b7;
+    text-decoration: none;
+    color: #ffffff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    margin-top: 35px;
+}
+
+.btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.btn-box a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #eb19b7;
+    text-decoration: none;
+    color: #ffffff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    margin-top: 35px;
+}
+
+.btn-box a:hover {
+    background-color: transparent;
+    color: #eb19b7;
+    border: 1px solid #eb19b7;
+}
+
+.quote_btn-container a {
+    color: #7c7b7b !important;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header a {
+    color: white !important;
+}
+
+header a.nav-link {
+    font-size: 16px;
+}
+
+/* body {
+    font-family: "Montserrat";
+    text-align: center;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat-Bold";
+}
+
+p {
+    color: #8f8f8f;
+}
+
+/* Headings */
+
+.big-heading {
+    font-family: "Montserrat-Black";
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* Sections */
+
+.colored-section {
+    /* background-color: #ff4c68; */
+
+    color: black;
+}
+
+.white-section {
+    background-color: black;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    padding-bottom: 0.5rem;
+    background-color: black;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat-Light";
+}
+
+#title {
+    background-color: black;
+    color: #fff;
+    text-align: left;
+}
+
+.testimonial {
+    padding: 0;
+}
+
+hr {
+    border-color: black;
+    border-width: 3px;
+    width: 10%;
+}
+
+.rooms-image:hover {
+    border-radius: 20%;
+    border: 4px solid palevioletred;
+}
+
+.card:hover {
+    background-color: transparent;
+    border: 4px solid black;
+    border-radius: 20%;
+}
+
+.card:hover .rooms-image {
+    border-radius: 20%;
+    border: 4px solid palevioletred;
+}
+
+.rooms-column:hover h2 {
+    font-weight: 800;
+}
+
+.rooms-column:hover p {
+    font-weight: 500;
+    color: orangered;
+}
+
+#rooms {
+    padding: 4rem;
+}
+
+#amenties {
+    background-color: black;
+    color: white;
+    padding: 3rem 7rem;
+}
+
+.amenties-gap {
+    padding-right: 4.5rem;
+}
+
+.carousel-caption {
+    line-height: 8;
+}
+
+#about {
+    padding: 3rem 0;
+}
+
+.about-row {
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+}
+
+.xyz {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+.pqr {
+    width: 45%;
+
+    float: right;
+    margin-left: 30px;
+}
+
+#contact {
+    background-color: black;
+    color: white;
+    padding: 3rem 5rem;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+/*
+  
+  quảng cáo
+  */
+#ads_right {
+
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
+
+#exitads {
+    text-align: right;
+    font-size: 11px;
+
+}
+
+#exitads a {
+    background-color: green;
+    padding: 2px 4px;
+    color: #FFF;
+}
+
+#content_ads {
+    border: 1px solid #01AEF0;
+
+}
+
+/*back to top*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    opacity: 0.7;
+}
+
+#myBtn:hover {
+    background-color: #f1f1f1;
+}
+
+#product-tab {
+    margin-top: 60px;
+}
+
+#product-tab .tab-nav {
+    position: relative;
+    text-align: center;
+    padding: 15px 0px;
+    margin-bottom: 30px;
+}
+
+#product-tab .tab-nav:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background-color: #E4E7ED;
+    z-index: -1;
+}
+
+#product-tab .tab-nav li {
+    display: inline-block;
+    background: #FFF;
+    padding: 0px 15px;
+}
+
+#product-tab .tab-nav li+li {
+    margin-left: 15px;
+}
+
+#product-tab .tab-nav li a {
+    display: block;
+    font-weight: 700;
+    color: #8D99AE;
+}
+
+#product-tab .tab-nav li.active a {
+    color: #D10024;
+}
+
+#product-tab .tab-nav li a:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #D10024;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+#product-tab .tab-nav li a:hover:after,
+#product-tab .tab-nav li a:focus:after,
+#product-tab .tab-nav li.active a:after {
+    width: 100%;
+}

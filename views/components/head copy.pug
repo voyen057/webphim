@@ -1,0 +1,37 @@
+script(src="http://code.jquery.com/jquery-3.1.0.min.js")
+script(src='/js/ajax.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+header 
+      nav.navbar.navbar-expand-lg.navbar-black
+        .container-fluid
+          a.navbar-brand(href='#') REVIEWS
+          button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+              li.nav-item
+                a.nav-link.active(aria-current='page', href='/') Trang chủ
+              each data in listtheloai
+                li.nav-item
+                  a.nav-link(href='/theloai/'+data.id) #{data.theloai}
+            .quote_btn-container
+                a(href='/login').
+                  Log in        
+            form.d-flex.ps-5
+              input#timkiem.form-control(type='text' placeholder='timkiem' name="search" )
+              button.btn.btn-outline-success(type='submit') 
+                  a(href=`/timkiem`)   Search          
+      #carouselExampleControls.carousel.slide(data-bs-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img(src="/img/X-Men-First-Class-character-banner.png", alt="", srcset="" height="350px" width="100%")
+          .carousel-item
+            img(src="/img/220518163222_Cinematone-banner_nVb8K.jpg", alt="", srcset="" height="350px" width="100%")
+          .carousel-item
+            img(src="/img/haiphuong-1024x576.jpg", alt="", srcset="" height="350px" width="100%")
+        button.carousel-control-prev(type='button', data-bs-target='#carouselExampleControls', data-bs-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.visually-hidden Previous
+        button.carousel-control-next(type='button', data-bs-target='#carouselExampleControls', data-bs-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.visually-hidden Next
